@@ -4,11 +4,14 @@ main: com.github.thijmengthn.spigot.TraderNotify
 api-version: 1.16
 description: A Spigot plugin that emits a broadcast when a wandering trader has appeared.
 website: GThN.xyz
+
 commands:
   reload-tradernotify:
     description: Reload the TraderNotify configuration file.
     usage: /reload-tradernotify
+    permission: tradernotify.reload
+
 permissions:
-  reload-tradernotify:
+  tradernotify.reload:
     description: Reload the TraderNotify configuration file.
     default: op
