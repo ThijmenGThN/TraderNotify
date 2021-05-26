@@ -35,10 +35,8 @@ public final class TraderNotify extends JavaPlugin implements Listener {
         Bukkit.getLogger().info(ChatColor.LIGHT_PURPLE + "[TraderNotify] " + ChatColor.WHITE + msg);
     }
 
-    public static void broadcast(String msg) {
-        for (Player player : Bukkit.getOnlinePlayers()) {
-            player.sendMessage(msg);
-        }
+    public static void playerBroadcast(String msg) {
+        for (Player player : Bukkit.getOnlinePlayers()) player.sendMessage(msg);
     }
 
     public static void reply(CommandSender sender, String msg) {
@@ -76,7 +74,7 @@ public final class TraderNotify extends JavaPlugin implements Listener {
             return;
 
         log(message());
-        broadcast(message());
+        playerBroadcast(message());
     }
 
 }
