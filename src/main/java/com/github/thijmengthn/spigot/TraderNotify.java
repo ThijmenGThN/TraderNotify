@@ -36,7 +36,7 @@ public final class TraderNotify extends JavaPlugin {
 
                 // Check if this isn't a duplicate message.
                 if (emitAllowed)
-                    utils.playerBroadcast(
+                    Utils.playerBroadcast(
                             ChatColor.translateAlternateColorCodes(
                                     '&',
                                     getConfig().getString("message")
@@ -51,8 +51,11 @@ public final class TraderNotify extends JavaPlugin {
 
         }, 0L, 600L);
 
+        // Metrics
+        new Metrics(this, 11485);
+
         // Mark as enabled
-        utils.log(ChatColor.GREEN + "Plugin Enabled");
+        Utils.log(ChatColor.GREEN + "Plugin Enabled");
 
     }
 
@@ -60,7 +63,7 @@ public final class TraderNotify extends JavaPlugin {
     public void onDisable() {
 
         // Mark as disabled
-        utils.log(ChatColor.RED + "Plugin Disabled");
+        Utils.log(ChatColor.RED + "Plugin Disabled");
     }
 
     @Override
@@ -72,7 +75,7 @@ public final class TraderNotify extends JavaPlugin {
 
                 // Check if player has sufficient permission.
                 if (!sender.hasPermission("tradernotify.reload")) {
-                    utils.reply(sender, ChatColor.RED + "You do not have permission to run this command.");
+                    Utils.reply(sender, ChatColor.RED + "You do not have permission to run this command.");
                     return false;
                 }
 
@@ -82,7 +85,7 @@ public final class TraderNotify extends JavaPlugin {
                 // Reload config file
                 reloadConfig();
 
-                utils.reply(sender, "The config has been reloaded.");
+                Utils.reply(sender, "The config has been reloaded.");
                 return true;
         }
 

@@ -5,7 +5,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class utils {
+public class Utils {
 
     public static void reply(CommandSender sender, String msg) {
         String notice = ChatColor.LIGHT_PURPLE + "[TraderNotify] ";
