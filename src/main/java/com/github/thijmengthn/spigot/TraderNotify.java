@@ -26,9 +26,8 @@ public final class TraderNotify extends JavaPlugin {
             // Loop through all entities to find wandering trader.
             boolean found = false;
             for (Entity i : Bukkit.getWorlds().get(0).getEntities()) {
-                if (i.toString().equals("CraftWanderingTrader")) {
+                if (i.getName().equals("Wandering Trader") || i.getName().equals("Trader Llama"))
                     found = true;
-                }
             }
 
             // If a wandering trader has been found in the world.
