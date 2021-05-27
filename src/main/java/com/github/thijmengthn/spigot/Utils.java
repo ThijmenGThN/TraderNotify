@@ -15,7 +15,7 @@ public class Utils {
     public static void log(String msg) {
         Bukkit.getLogger().info(ChatColor.LIGHT_PURPLE + "[TraderNotify] " + ChatColor.WHITE + msg);
     }
-
+ 
     public static void playerBroadcast(String msg) {
         for (Player player : Bukkit.getOnlinePlayers()) player.sendMessage(msg);
     }

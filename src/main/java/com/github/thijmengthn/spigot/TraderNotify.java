@@ -35,13 +35,21 @@ public final class TraderNotify extends JavaPlugin {
             if (found) {
 
                 // Check if this isn't a duplicate message.
-                if (emitAllowed)
-                    Utils.playerBroadcast(
-                            ChatColor.translateAlternateColorCodes(
-                                    '&',
-                                    getConfig().getString("message")
-                            )
+                if (emitAllowed) {
+
+                    // Construct and convert message from config.
+                    String message = ChatColor.translateAlternateColorCodes(
+                            '&',
+                            getConfig().getString("message")
                     );
+
+                    // Broadcast to all players.
+                    Utils.playerBroadcast(message);
+
+                    // Display in server console.
+                    Utils.log(message);
+
+                }
 
                 // Disallow to prevent duplicates.
                 emitAllowed = false;
