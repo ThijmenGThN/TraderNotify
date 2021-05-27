@@ -5,8 +5,13 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Entity;
+import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitScheduler;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.Scanner;
 
 public final class TraderNotify extends JavaPlugin {
 
@@ -61,16 +66,25 @@ public final class TraderNotify extends JavaPlugin {
         // Metrics
         new Metrics(this, 11485);
 
-        // Mark as enabled
-        Utils.log(ChatColor.GREEN + "Plugin Enabled");
+        // Get version
+        PluginDescriptionFile pdf = this.getDescription();
+        String version = pdf.getVersion();
 
-    }
+        // Display stats.
+        try {
+            URL url = new URL("https://raw.githubusercontent.com/ThijmenGThN/TraderNotify/master/version.txt");
+            Scanner s = new Scanner(url.openStream());
 
-    @Override
-    public void onDisable() {
-
-        // Mark as disabled
-        Utils.log(ChatColor.RED + "Plugin Disabled");
+            Utils.log(ChatColor.LIGHT_PURPLE + "\n╔══ TraderNotify ══════════════" +
+                    "\n║ Version: " + version +
+                    "\n║ Latest: " + s.nextLine() +
+                    "\n╚══");
+        } catch (IOException e) {
+            Utils.log(ChatColor.LIGHT_PURPLE + "\n╔══ TraderNotify ══════════════" +
+                    "\n║ Version: " + version +
+                    "\n║ Latest: unknown" +
+                    "\n╚══");
+        }
     }
 
     @Override
@@ -93,6 +107,7 @@ public final class TraderNotify extends JavaPlugin {
                 reloadConfig();
 
                 Utils.reply(sender, "The config has been reloaded.");
+                Utils.log("The config has been reloaded.");
                 return true;
         }
 
