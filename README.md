@@ -45,7 +45,7 @@ Are you having trouble with the plugin, would you like to report a bug or is it 
 <br>
 Open an issue on GitHub, you can do that [here](https://github.com/ThijmenGThN/TraderNotify/issues/new).
 
-## Feature Request
+## Feature Requests
 
 Great! You have a wonderful addition for this plugin, can't wait to hear about it.
 <br>
