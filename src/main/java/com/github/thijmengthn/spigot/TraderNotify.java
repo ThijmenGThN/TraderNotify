@@ -71,7 +71,7 @@ public final class TraderNotify extends JavaPlugin {
 
         // Display stats.
         String latest = "unknown";
-        String state = ChatColor.RED + "Latest version unfetchable!";
+        String state = ChatColor.RED + "Latest version undetectable!";
 
         try {
             URL url = new URL("https://raw.githubusercontent.com/ThijmenGThN/TraderNotify/master/version.txt");
@@ -91,13 +91,21 @@ public final class TraderNotify extends JavaPlugin {
                 "\n║ " +
                 "\n║ Version: " + version +
                 "\n║ Latest: " + latest +
-                "\n║ " +
-                "\n║ It is recommended to always stay updated to the latest version " +
-                "\n║ of this plugin, updates mostly contain bug fixes and code " +
-                "\n║ improvements that might speed up your server." +
-                "\n║ " +
-                "\n║ The link below will take you to the most recent version," +
-                "\n║ " + ChatColor.AQUA + "https://github.com/ThijmenGThN/TraderNotify/releases" + ChatColor.LIGHT_PURPLE +
+                "\n║ ";
+
+        if (!state.equals(ChatColor.GREEN + "You're up to date!")) {
+            versionNotify = versionNotify + "\n║ It is recommended to always stay updated to the latest version " +
+                    "\n║ of this plugin, updates mostly contain bug fixes and code " +
+                    "\n║ improvements that might speed up your server." +
+                    "\n║ " +
+                    "\n║ The link below will take you to the most recent version," +
+                    "\n║ " + ChatColor.AQUA + "https://github.com/ThijmenGThN/TraderNotify/releases" + ChatColor.LIGHT_PURPLE +
+                    "\n║ ";
+        }
+
+        versionNotify = versionNotify +
+                "\n║ Wish to report a bug or request a feature? You can do so here," +
+                "\n║ " + ChatColor.AQUA + "https://github.com/ThijmenGThN/TraderNotify/issues" + ChatColor.LIGHT_PURPLE +
                 "\n║ " +
                 "\n╚══";
 
