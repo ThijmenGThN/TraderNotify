@@ -26,18 +26,34 @@ TraderNotify is a neat plugin which is used to broadcast a customizable message 
 ## Getting Started
 
 1. Download the latest version of the plugin [here](https://github.com/ThijmenGThN/TraderNotify/releases).
-2. Move it over to your plugins folder in the root of your server.
+2. Move it over to your plugin's folder in the root of your server.
 3. Restart your server or use the `/reload confirm` command.
+
+## Commands & Permissions
+
+```
+commands:
+  reload-tradernotify:
+    description: Reload the TraderNotify configuration file.
+    usage: /reload-tradernotify
+    permission: tradernotify.reload
+```
 
 ## Plugin Support
 
 Are you having trouble with the plugin, would you like to report a bug or is it simply not working?
 <br>
-Open an issue on GitHub, you can do that [here](https://github.com/ThijmenGThN/TraderNotify/issues).
+Open an issue on GitHub, you can do that [here](https://github.com/ThijmenGThN/TraderNotify/issues/new).
+
+## Feature Request
+
+Great! You have a wonderful addition for this plugin, can't wait to hear about it.
+<br>
+The best way to make me notice your idea is by going [here](https://github.com/ThijmenGThN/TraderNotify/issues/new).
 
 ## Open Source - Contributing
 
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Contributions are what make the open source community such an amazing place to be. Learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
