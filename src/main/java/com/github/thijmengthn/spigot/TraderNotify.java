@@ -9,7 +9,6 @@ import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitScheduler;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.Scanner;
 
@@ -71,20 +70,38 @@ public final class TraderNotify extends JavaPlugin {
         String version = pdf.getVersion();
 
         // Display stats.
+        String latest = "unknown";
+        String state = ChatColor.RED + "Latest version unfetchable!";
+
         try {
             URL url = new URL("https://raw.githubusercontent.com/ThijmenGThN/TraderNotify/master/version.txt");
             Scanner s = new Scanner(url.openStream());
 
-            Utils.log(ChatColor.LIGHT_PURPLE + "\n╔══ TraderNotify ══════════════" +
-                    "\n║ Version: " + version +
-                    "\n║ Latest: " + s.nextLine() +
-                    "\n╚══");
-        } catch (IOException e) {
-            Utils.log(ChatColor.LIGHT_PURPLE + "\n╔══ TraderNotify ══════════════" +
-                    "\n║ Version: " + version +
-                    "\n║ Latest: unknown" +
-                    "\n╚══");
+            latest = s.nextLine();
+
+            if (version.equals(latest)) state = ChatColor.GREEN + "You're up to date!";
+            else state = ChatColor.RED + "An update is required!";
+        } catch (Exception e) {
+
         }
+
+        String versionNotify = ChatColor.LIGHT_PURPLE + "\n╔══ TraderNotify ══════════════" +
+                "\n║ " +
+                "\n║ " + state + ChatColor.LIGHT_PURPLE +
+                "\n║ " +
+                "\n║ Version: " + version +
+                "\n║ Latest: " + latest +
+                "\n║ " +
+                "\n║ It is recommended to always stay updated to the latest version " +
+                "\n║ of this plugin, updates mostly contain bug fixes and code " +
+                "\n║ improvements that might speed up your server." +
+                "\n║ " +
+                "\n║ The link below will take you to the most recent version," +
+                "\n║ " + ChatColor.AQUA + "https://github.com/ThijmenGThN/TraderNotify/releases" + ChatColor.LIGHT_PURPLE +
+                "\n║ " +
+                "\n╚══";
+
+        Utils.log(versionNotify);
     }
 
     @Override
