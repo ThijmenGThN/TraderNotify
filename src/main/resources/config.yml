@@ -9,9 +9,3 @@
 # Broadcast Message
 # ~ Set a message that should appear once a wandering trader appears in your world.
 message: "&dA Wandering Trader has appeared!"
-
-
-
-# Developers workspace
-# ~ Normal users won't need to toggle this.
-debug: false

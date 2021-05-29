@@ -7,21 +7,34 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public final class TraderNotify extends JavaPlugin {
 
-
     @Override
     public void onEnable() {
 
-        // If missing generate new config file from default.
+        // Config generator
         saveDefaultConfig();
 
         // Schedule seeker
         Scheduler.seek(this);
 
-        // Metrics
+        // Init Metrics
         new Metrics(this, 11485);
 
-        // Check version
-        version.check(this);
+        // Show display board
+        Utils.log(ChatColor.LIGHT_PURPLE +
+                "\n╔══ TraderNotify " + this.getDescription().getVersion() + " ══════════════" +
+                "\n║ " +
+                "\n║ Are you having trouble with the plugin?" +
+                "\n║ " +
+                "\n║ Open an issue on GitHub, you can do that here." +
+                "\n║ " + ChatColor.AQUA + "https://github.com/ThijmenGThN/TraderNotify/issues/new" + ChatColor.LIGHT_PURPLE +
+                "\n║ " +
+                "\n║ You can also open a ticket on Discord." +
+                "\n║ " + ChatColor.AQUA + "https://discord.gg/7cqHVQyFmU" + ChatColor.LIGHT_PURPLE +
+                "\n║ " +
+                "\n╚══");
+
+        // Update plugin
+        Utils.update(this, "https://raw.githubusercontent.com/ThijmenGThN/TraderNotify/master/update.txt");
 
     }
 
@@ -38,7 +51,7 @@ public final class TraderNotify extends JavaPlugin {
                     return false;
                 }
 
-                // If missing generate new config file from default.
+                // Config generator.
                 saveDefaultConfig();
 
                 // Reload config file
