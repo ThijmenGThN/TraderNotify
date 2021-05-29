@@ -1,7 +1,7 @@
 name: TraderNotify
 version: ${project.version}
 main: com.github.thijmengthn.spigot.TraderNotify
-api-version: 1.16
+api-version: 1.14
 description: A Spigot plugin that emits a broadcast when a wandering trader has appeared.
 website: GThN.xyz
 
