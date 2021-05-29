@@ -29,15 +29,43 @@ TraderNotify is a neat plugin which is used to broadcast a customizable message 
 2. Move it over to your plugin's folder in the root of your server.
 3. Restart your server or use the `/reload confirm` command.
 
+## Configuration
+
+<details>
+<summary>Show Contents</summary>
+<pre>
+# TraderNotify
+# Get notified when a Wandering Trader is in your world!
+|
+# For support on Discord, https://discord.gg/7cqHVQyFmU
+# For issues or requests, https://github.com/ThijmenGThN/TraderNotify/issues/new
+|
+|
+|
+# Broadcast Message
+# ~ Set a message that should appear once a wandering trader appears in your world.
+message: "&dA Wandering Trader has appeared!"
+|
+|
+|
+# Developers workspace
+# ~ Normal users won't need to toggle this.
+debug: false
+</pre>
+</details>
+
 ## Commands & Permissions
 
-```
+<details>
+<summary>Show Contents</summary>
+<pre>
 commands:
   reload-tradernotify:
     description: Reload the TraderNotify configuration file.
     usage: /reload-tradernotify
     permission: tradernotify.reload
-```
+</pre>
+</details>
 
 ## Plugin Support
 
@@ -45,7 +73,7 @@ Are you having trouble with the plugin, would you like to report a bug or is it 
 <br>
 Open an issue on GitHub, you can do that [here](https://github.com/ThijmenGThN/TraderNotify/issues/new).
 
-## Feature Request
+## Feature Requests
 
 Great! You have a wonderful addition for this plugin, can't wait to hear about it.
 <br>
