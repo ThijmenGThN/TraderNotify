@@ -1,8 +1,17 @@
 # TraderNotify
 # Get notified when a Wandering Trader is in your world!
 #
-# For support, contact ThijmenGThN#2684 on Discord
-# For issues, go to https://github.com/ThijmenGThN/TraderNotify/issues
+# For support on Discord, https://discord.gg/7cqHVQyFmU
+# For issues or requests, https://github.com/ThijmenGThN/TraderNotify/issues/new
 
-# Set a message that should appear once a wandering trader appears in your world.
+
+
+# Broadcast Message
+# ~ Set a message that should appear once a wandering trader appears in your world.
 message: "&dA Wandering Trader has appeared!"
+
+
+
+# Developers workspace
+# ~ Normal users won't need to toggle this.
+debug: false
