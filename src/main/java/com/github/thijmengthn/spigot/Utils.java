@@ -51,16 +51,17 @@ public class Utils {
             URL download = new URL(s.nextLine());
             String deprecated = s.nextLine();
 
+            // Delete old versions
+            for (String dep : deprecated.split(" ")) {
+                new File("plugins/TraderNotify-" + dep + ".jar").delete();
+            }
+
             // Check for update
             if (version.equals(latest)) return;
 
             // Download update
             InputStream in = download.openStream();
             Files.copy(in, Paths.get("plugins/TraderNotify-" + latest + ".jar"), StandardCopyOption.REPLACE_EXISTING);
-
-            // Delete old versions
-            for (String dep : deprecated.split(" "))
-                new File("plugins/TraderNotify-" + dep + ".jar").delete();
 
         } catch (Exception error) {
 
