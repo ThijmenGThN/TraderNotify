@@ -8,7 +8,7 @@ import org.bukkit.scheduler.BukkitScheduler;
 
 public class Scheduler extends JavaPlugin {
 
-    public static void seek(JavaPlugin plugin) {
+    public static void seekTrader(JavaPlugin plugin) {
 
         // Required to prevent duplicate messaging.
         final boolean[] emitAllowed = {true};
@@ -51,7 +51,7 @@ public class Scheduler extends JavaPlugin {
 
                 // Allow to listen for new wandering traders.
                 emitAllowed[0] = true;
-                
+
             }
 
         }, 0L, 600L);
