@@ -51,11 +51,7 @@ public class Scheduler extends JavaPlugin {
 
                 // Allow to listen for new wandering traders.
                 emitAllowed[0] = true;
-
-                // Debugger
-                if (plugin.getConfig().getString("debug").equals("true"))
-                    Utils.log("[Debug]: Find entity error, couldn't find a wandering trader or trader llama's.");
-
+                
             }
 
         }, 0L, 600L);
