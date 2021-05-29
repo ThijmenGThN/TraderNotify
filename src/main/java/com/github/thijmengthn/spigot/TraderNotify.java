@@ -10,14 +10,14 @@ public final class TraderNotify extends JavaPlugin {
     @Override
     public void onEnable() {
 
+        // Init Metrics ( third-party )
+        new Metrics(this, 11485);
+
         // Config generator
         saveDefaultConfig();
 
         // Schedule seeker
-        Scheduler.seek(this);
-
-        // Init Metrics
-        new Metrics(this, 11485);
+        Scheduler.seekTrader(this);
 
         // Show display board
         Utils.log(ChatColor.LIGHT_PURPLE +
@@ -43,6 +43,8 @@ public final class TraderNotify extends JavaPlugin {
 
         // Parse all available commands.
         switch (label.toLowerCase()) {
+
+            // Reload plugin configuration
             case "reload-tradernotify":
 
                 // Check if player has sufficient permission.
@@ -60,6 +62,7 @@ public final class TraderNotify extends JavaPlugin {
                 Utils.reply(sender, "The config has been reloaded.");
                 Utils.log("The config has been reloaded.");
                 return true;
+
         }
 
         return false;

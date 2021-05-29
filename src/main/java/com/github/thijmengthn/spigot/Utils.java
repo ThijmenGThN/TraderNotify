@@ -17,16 +17,25 @@ import java.util.Scanner;
 public class Utils {
 
     public static void reply(CommandSender sender, String msg) {
+
+        // Emit message to command sender exclusively
         String notice = ChatColor.LIGHT_PURPLE + "[TraderNotify] ";
         sender.sendMessage(notice + ChatColor.WHITE + msg);
+
     }
 
     public static void log(String msg) {
+
+        // Emit message to console exclusively
         Bukkit.getLogger().info(ChatColor.LIGHT_PURPLE + "[TraderNotify] " + ChatColor.WHITE + msg);
+
     }
 
     public static void playerBroadcast(String msg) {
+
+        // Emit message to each player on the server
         for (Player player : Bukkit.getOnlinePlayers()) player.sendMessage(msg);
+
     }
 
     public static void update(JavaPlugin plugin, String updateUrl) {
