@@ -39,7 +39,11 @@ public class version extends JavaPlugin {
                 state = ChatColor.RED + "A new major update is available!";
 
         } catch (Exception e) {
-            Utils.log(e.toString());
+
+            // Debugger
+            if (plugin.getConfig().getString("debug").equals("true"))
+                Utils.log("[Debug]: Fetch version error, " + e);
+
         }
 
         String versionNotify = ChatColor.LIGHT_PURPLE + "\n╔══ TraderNotify ══════════════" +
