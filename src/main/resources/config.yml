@@ -29,4 +29,4 @@ message: "&dA Wandering Trader has appeared!"
 # Simple: (option: "<World_Name>") Listen to a specific world only.
 # Multi: (option: ["<World_Name>", "<World_Name>"]) Listen to multiple world specifically.
 # All: (option: ALL) Listen to all available worlds, this also includes dimensions.
-overworld: DEFAULT
+listener: DEFAULT
