@@ -34,23 +34,34 @@ TraderNotify is a neat plugin which is used to broadcast a customizable message 
 <details>
 <summary>Show Contents</summary>
 <pre>
-# TraderNotify
-# Get notified when a Wandering Trader is in your world!
-|
-# For support on Discord, https://discord.gg/7cqHVQyFmU
-# For issues or requests, https://github.com/ThijmenGThN/TraderNotify/issues/new
-|
-|
-|
-# Broadcast Message
-# ~ Set a message that should appear once a wandering trader appears in your world.
+# ╔══ TraderNotify ══════════════
+# ║
+# ║ Are you having trouble with the plugin?
+# ║
+# ║ Open an issue on GitHub, you can do that here.
+# ║ https://github.com/ThijmenGThN/TraderNotify/issues/new
+# ║
+# ║ You can also open a ticket on Discord.
+# ║ https://discord.gg/7cqHVQyFmU
+# ║
+# ╠════ Broadcast Message ══════════════
+# ║
+# ║ message: "&dA Wandering Trader has appeared!"
+# ║
+# ║ Description: This will be displayed when a wandering trader has appeared.
+# ║ TIP: Color codes can be used, no variables are available.
+# ║
+# ╠════ World Listener ══════════════
+# ║
+# ║ listener: DEFAULT
+# ║
+# ║ Description: Which worlds should the plugin listener to?
+# ║ Option 1: <DEFAULT> ( listener: DEFAULT ) Uses the first world that gets loaded, should be overworld.
+# ║ Option 2: <ALL> ( listener: ALL ) Listen to all available worlds, this also includes dimensions.
+# ║
+# ╚══
 message: "&dA Wandering Trader has appeared!"
-|
-|
-|
-# Developers workspace
-# ~ Normal users won't need to toggle this.
-debug: false
+listener: DEFAULT
 </pre>
 </details>
 
