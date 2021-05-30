@@ -13,8 +13,8 @@ public final class TraderNotify extends JavaPlugin {
         // Init Metrics ( third-party )
         new Metrics(this, 11485);
 
-        // Config generator
-        saveDefaultConfig();
+        // Config loader
+        Utils.loadConfig(this);
 
         // Schedule seeker
         Scheduler.seekTrader(this);
@@ -53,11 +53,8 @@ public final class TraderNotify extends JavaPlugin {
                     return false;
                 }
 
-                // Config generator.
-                saveDefaultConfig();
-
-                // Reload config file
-                reloadConfig();
+                // Config loader
+                Utils.loadConfig(this);
 
                 Utils.reply(sender, "The config has been reloaded.");
                 Utils.log("The config has been reloaded.");

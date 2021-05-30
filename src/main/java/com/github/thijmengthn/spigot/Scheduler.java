@@ -1,8 +1,6 @@
 package com.github.thijmengthn.spigot;
 
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.entity.Entity;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitScheduler;
 
@@ -18,11 +16,7 @@ public class Scheduler extends JavaPlugin {
         scheduler.scheduleSyncRepeatingTask(plugin, () -> {
 
             // Loop through all entities to find wandering trader.
-            boolean found = false;
-            for (Entity i : Bukkit.getWorlds().get(0).getEntities()) {
-                if (i.getName().equals("Wandering Trader") || i.getName().equals("Trader Llama"))
-                    found = true;
-            }
+            boolean found = Utils.findTrader(plugin);
 
             // If a wandering trader has been found in the world.
             if (found) {

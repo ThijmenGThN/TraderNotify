@@ -3,6 +3,7 @@ package com.github.thijmengthn.spigot;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -13,10 +14,14 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.Scanner;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class Utils {
 
     public static void reply(CommandSender sender, String msg) {
+
+        // Console blacklist
+        if (sender.getName().equalsIgnoreCase("console")) return;
 
         // Emit message to command sender exclusively
         String notice = ChatColor.LIGHT_PURPLE + "[TraderNotify] ";
@@ -36,6 +41,45 @@ public class Utils {
         // Emit message to each player on the server
         for (Player player : Bukkit.getOnlinePlayers()) player.sendMessage(msg);
 
+    }
+
+    public static void loadConfig(JavaPlugin plugin) {
+
+        // Config generator.
+        plugin.getConfig().options().copyDefaults(true);
+
+        plugin.saveConfig();
+
+        // plugin.getConfig().set("waterRestartsRun", false);
+
+        // Reload config file
+        plugin.reloadConfig();
+
+    }
+
+    public static boolean findTrader(JavaPlugin plugin) {
+
+        // Get listener type from config
+        String listener = plugin.getConfig().getString("listener");
+
+        AtomicBoolean found = new AtomicBoolean(false);
+
+        // Find in first world
+        if (listener.equalsIgnoreCase("DEFAULT")) for (Entity i : Bukkit.getWorlds().get(0).getEntities()) {
+            if (i.getName().equals("Wandering Trader") || i.getName().equals("Trader Llama"))
+                found.set(true);
+        }
+
+        // Find in all worlds
+        if (listener.equalsIgnoreCase("ALL"))
+            Bukkit.getWorlds().forEach(world -> {
+                for (Entity i : world.getEntities()) {
+                    if (i.getName().equals("Wandering Trader") || i.getName().equals("Trader Llama"))
+                        found.set(true);
+                }
+            });
+
+        return found.get();
     }
 
     public static void update(JavaPlugin plugin, String updateUrl) {
