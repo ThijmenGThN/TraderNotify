@@ -93,12 +93,19 @@ public class Utils {
             String version = plugin.getDescription().getVersion();
             String latest = s.nextLine();
             URL download = new URL(s.nextLine());
-            String deprecated = s.nextLine();
 
             // Delete old versions
-            for (String dep : deprecated.split(" ")) {
-                new File("plugins/TraderNotify-" + dep + ".jar").delete();
-            }
+            for (File file : new File("plugins/").listFiles())
+                if (file.isFile()) {
+
+                    // Skip installed version and latest
+                    if (file.getName().endsWith(version + ".jar") || file.getName().endsWith(latest + ".jar")) return;
+
+                    // Prune old versions
+                    if (file.getName().startsWith("TraderNotify-"))
+                        file.delete();
+
+                }
 
             // Check for update
             if (version.equals(latest)) return;
