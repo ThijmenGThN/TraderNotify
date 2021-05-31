@@ -19,7 +19,7 @@
 # ║
 # ║ listener: DEFAULT
 # ║
-# ║ Description: Which worlds should the plugin listener to?
+# ║ Description: Which worlds should the plugin listen to?
 # ║ Option 1: <DEFAULT> ( listener: DEFAULT ) Uses the first world that gets loaded, should be overworld.
 # ║ Option 2: <ALL> ( listener: ALL ) Listen to all available worlds, this also includes dimensions.
 # ║
