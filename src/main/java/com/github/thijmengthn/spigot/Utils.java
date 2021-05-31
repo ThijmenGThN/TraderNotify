@@ -96,16 +96,14 @@ public class Utils {
 
             // Delete old versions
             for (File file : new File("plugins/").listFiles())
-                if (file.isFile()) {
+                if (file.isFile())
 
                     // Skip installed version and latest
-                    if (file.getName().endsWith(version + ".jar") || file.getName().endsWith(latest + ".jar")) return;
+                    if (!file.getName().endsWith(version + ".jar"))
 
-                    // Prune old versions
-                    if (file.getName().startsWith("TraderNotify-"))
-                        file.delete();
-
-                }
+                        // Prune old versions
+                        if (file.getName().startsWith("TraderNotify-"))
+                            file.delete();
 
             // Check for update
             if (version.equals(latest)) return;
