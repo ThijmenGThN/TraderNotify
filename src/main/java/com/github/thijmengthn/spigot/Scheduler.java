@@ -31,7 +31,7 @@ public class Scheduler extends JavaPlugin {
                     );
 
                     // Broadcast to all players.
-                    Utils.playerBroadcast(message);
+                    Utils.playerBroadcast(plugin, message);
 
                     // Display in server console.
                     Utils.log(message);

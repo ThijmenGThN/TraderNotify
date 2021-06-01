@@ -13,5 +13,7 @@ commands:
 
 permissions:
   tradernotify.reload:
-    description: Reload the TraderNotify configuration file.
+    description: Reload config file.
     default: op
+  tradernotify.getNotified:
+    description: Allows players to receive notifications.
