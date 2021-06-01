@@ -8,14 +8,18 @@
 # ║ You can also open a ticket on Discord.
 # ║ https://discord.gg/7cqHVQyFmU
 # ║
-# ╠════ Broadcast Message ══════════════
+# ║
+# ║
+# ║
+# ║
+# ╠════ MESSAGE ══════════════
 # ║
 # ║ message: "&dA Wandering Trader has appeared!"
 # ║
 # ║ Description: This will be displayed when a wandering trader has appeared.
 # ║ TIP: Color codes can be used, no variables are available.
 # ║
-# ╠════ World Listener ══════════════
+# ╠════ LISTENER ══════════════
 # ║
 # ║ listener: DEFAULT
 # ║
@@ -23,6 +27,16 @@
 # ║ Option 1: <DEFAULT> ( listener: DEFAULT ) Uses the first world that gets loaded, should be overworld.
 # ║ Option 2: <ALL> ( listener: ALL ) Listen to all available worlds, this also includes dimensions.
 # ║
+# ╠════ USE PERMISSIONS ══════════════
+# ║
+# ║ use-permissions: false
+# ║
+# ║ Description: Require permissions, every permission node can be found at: https://www.spigotmc.org/resources/tradernotify.92776/
+# ║ TIP: Keeping this on false might be the best option, normal users won't be able to do much.
+# ║ Option 1: <false> ( use-permissions: false ) Keep permissions off, this will use the default permission setting.
+# ║ Option 2: <true> ( use-permissions: true ) Only players with specific permission nodes can do certain things.
+# ║
 # ╚══
 message: "&dA Wandering Trader has appeared!"
 listener: DEFAULT
+use-permissions: false

@@ -36,11 +36,20 @@ public class Utils {
 
     }
 
-    public static void playerBroadcast(String msg) {
+    public static void playerBroadcast(JavaPlugin plugin, String msg) {
 
         // Emit message to each player on the server
-        for (Player player : Bukkit.getOnlinePlayers()) player.sendMessage(msg);
+        for (Player player : Bukkit.getOnlinePlayers()) {
 
+            // Check if config has permissions enabled
+            if (plugin.getConfig().getString("use-permissions").equalsIgnoreCase("true")) {
+
+                // Check if user has getNotified permission
+                if (player.hasPermission("tradernotify.getNotified"))
+                    player.sendMessage(msg);
+
+            } else player.sendMessage(msg);
+        }
     }
 
     public static void loadConfig(JavaPlugin plugin) {
