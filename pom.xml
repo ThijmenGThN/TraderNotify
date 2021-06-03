@@ -6,7 +6,7 @@
 
     <groupId>com.github.thijmengthn</groupId>
     <artifactId>TraderNotify</artifactId>
-    <version>1.5.7</version>
+    <version>1.5.8</version>
     <packaging>jar</packaging>
 
     <name>TraderNotify</name>

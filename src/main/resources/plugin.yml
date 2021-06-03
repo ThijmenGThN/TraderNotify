@@ -7,7 +7,7 @@ website: https://github.com/ThijmenGThN/TraderNotify
 
 commands:
   reload-tradernotify:
-    description: Reload the TraderNotify configuration file.
+    description: Reload config file.
     usage: /reload-tradernotify
     permission: tradernotify.reload
 
@@ -16,4 +16,4 @@ permissions:
     description: Reload config file.
     default: op
   tradernotify.getNotified:
-    description: Allows players to receive notifications.
+    description: Receive notifications.
