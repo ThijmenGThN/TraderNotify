@@ -60,7 +60,6 @@ public final class TraderNotify extends JavaPlugin {
 
         // Update plugin
         Utils.update(this, "https://raw.githubusercontent.com/ThijmenGThN/TraderNotify/master/update.txt");
-
     }
 
     @Override
@@ -84,7 +83,6 @@ public final class TraderNotify extends JavaPlugin {
                 Utils.reply(sender, "The config has been reloaded.");
                 Utils.log("The config has been reloaded.");
                 return true;
-
         }
 
         return false;
