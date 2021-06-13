@@ -35,7 +35,6 @@ public class Scheduler extends JavaPlugin {
 
                     // Display in server console.
                     Utils.log(message);
-
                 }
 
                 // Disallow to prevent duplicates.

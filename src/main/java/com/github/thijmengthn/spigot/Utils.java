@@ -26,14 +26,12 @@ public class Utils {
         // Emit message to command sender exclusively
         String notice = ChatColor.LIGHT_PURPLE + "[TraderNotify] ";
         sender.sendMessage(notice + ChatColor.WHITE + msg);
-
     }
 
     public static void log(String msg) {
 
         // Emit message to console exclusively
         Bukkit.getLogger().info(ChatColor.LIGHT_PURPLE + "[TraderNotify] " + ChatColor.WHITE + msg);
-
     }
 
     public static void playerBroadcast(JavaPlugin plugin, String msg) {
@@ -58,7 +56,6 @@ public class Utils {
         plugin.getConfig().options().copyDefaults(true);
         plugin.saveConfig();
         plugin.reloadConfig();
-
     }
 
     public static boolean findTrader(JavaPlugin plugin) {
@@ -71,14 +68,14 @@ public class Utils {
         // Find in first world
         if (listener.equalsIgnoreCase("DEFAULT"))
             for (Entity i : Bukkit.getWorlds().get(0).getEntities())
-                if (i.getName().equals("Wandering Trader") || i.getName().equals("Trader Llama"))
+                if (i.getName().equals("Wandering Trader"))
                     found.set(true);
 
         // Find in all worlds
         if (listener.equalsIgnoreCase("ALL"))
             Bukkit.getWorlds().forEach(world -> {
                 for (Entity i : world.getEntities())
-                    if (i.getName().equals("Wandering Trader") || i.getName().equals("Trader Llama"))
+                    if (i.getName().equals("Wandering Trader"))
                         found.set(true);
             });
 
@@ -119,7 +116,6 @@ public class Utils {
 
             // Throw error
             Utils.log("An error has occurred: " + error);
-
         }
     }
 
