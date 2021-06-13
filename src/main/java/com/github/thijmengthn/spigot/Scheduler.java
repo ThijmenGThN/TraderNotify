@@ -41,12 +41,8 @@ public class Scheduler extends JavaPlugin {
                 // Disallow to prevent duplicates.
                 emitAllowed[0] = false;
 
-            } else {
-
                 // Allow to listen for new wandering traders.
-                emitAllowed[0] = true;
-
-            }
+            } else emitAllowed[0] = true;
 
         }, 0L, 600L);
     }
