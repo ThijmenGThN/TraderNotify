@@ -54,14 +54,9 @@ public class Utils {
 
     public static void loadConfig(JavaPlugin plugin) {
 
-        // Config generator.
+        // Configuration loader
         plugin.getConfig().options().copyDefaults(true);
-
         plugin.saveConfig();
-
-        // plugin.getConfig().set("waterRestartsRun", false);
-
-        // Reload config file
         plugin.reloadConfig();
 
     }
@@ -74,18 +69,17 @@ public class Utils {
         AtomicBoolean found = new AtomicBoolean(false);
 
         // Find in first world
-        if (listener.equalsIgnoreCase("DEFAULT")) for (Entity i : Bukkit.getWorlds().get(0).getEntities()) {
-            if (i.getName().equals("Wandering Trader") || i.getName().equals("Trader Llama"))
-                found.set(true);
-        }
+        if (listener.equalsIgnoreCase("DEFAULT"))
+            for (Entity i : Bukkit.getWorlds().get(0).getEntities())
+                if (i.getName().equals("Wandering Trader") || i.getName().equals("Trader Llama"))
+                    found.set(true);
 
         // Find in all worlds
         if (listener.equalsIgnoreCase("ALL"))
             Bukkit.getWorlds().forEach(world -> {
-                for (Entity i : world.getEntities()) {
+                for (Entity i : world.getEntities())
                     if (i.getName().equals("Wandering Trader") || i.getName().equals("Trader Llama"))
                         found.set(true);
-                }
             });
 
         return found.get();
