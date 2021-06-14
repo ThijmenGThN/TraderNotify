@@ -27,7 +27,9 @@ TraderNotify is a neat plugin which is used to broadcast a customizable message 
 
 1. Download the latest version of the plugin [here](https://github.com/ThijmenGThN/TraderNotify/releases).
 2. Move it over to your plugin's folder in the root of your server.
-3. Restart your server or use the `/reload confirm` command.
+3. Start / restart your server ( you only have to do this once ).
+
+Tip: To reload the config, use /reload-tradernotify.
 
 ## Configuration
 
