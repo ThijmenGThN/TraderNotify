@@ -82,6 +82,21 @@ public class Utils {
         return found.get();
     }
 
+    public static void consoleBanner(JavaPlugin plugin, ChatColor color, String field1, String field2) {
+        log(color + "\n╔══ TraderNotify " + plugin.getDescription().getVersion() + " ══════════════" +
+                "\n║ " +
+                "\n║ " + field1 +
+                "\n║ " + field2 +
+                "\n║ " +
+                "\n║ Open an issue on GitHub, you can do that here." +
+                "\n║ " + ChatColor.AQUA + "https://github.com/ThijmenGThN/TraderNotify/issues/new" + color +
+                "\n║ " +
+                "\n║ You can also open a ticket on Discord." +
+                "\n║ " + ChatColor.AQUA + "https://discord.gg/7cqHVQyFmU" + color +
+                "\n║ " +
+                "\n╚══");
+    }
+
     public static void update(JavaPlugin plugin, String updateUrl) {
         try {
 
