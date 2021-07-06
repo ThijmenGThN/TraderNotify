@@ -11,27 +11,17 @@ public final class TraderNotify extends JavaPlugin {
     public void onEnable() {
 
         // Get server version
-        String serverFullVersion = getServer().getBukkitVersion().split("-")[0];
-        int serverMinorVersion = Integer.parseInt(serverFullVersion.split("\\.")[1]);
+        int serverVersion = Integer.parseInt(
+                getServer().getBukkitVersion()
+                        .split("-")[0]
+                        .split("\\.")[1]);
 
         // Check server version
-        if (serverMinorVersion < 14) {
-            Utils.log(ChatColor.RED +
-                    "\n╔══ TraderNotify " + this.getDescription().getVersion() + " ══════════════" +
-                    "\n║ " +
-                    "\n║ This version of Minecraft is not supported by this plugin!" +
-                    "\n║ Reach out to support may you think that this is an error." +
-                    "\n║ " +
-                    "\n║ Open an issue on GitHub, you can do that here." +
-                    "\n║ " + ChatColor.AQUA + "https://github.com/ThijmenGThN/TraderNotify/issues/new" + ChatColor.RED +
-                    "\n║ " +
-                    "\n║ You can also open a ticket on Discord." +
-                    "\n║ " + ChatColor.AQUA + "https://discord.gg/7cqHVQyFmU" + ChatColor.RED +
-                    "\n║ " +
-                    "\n╚══");
+        if (serverVersion < 14) {
+            Utils.consoleBanner(this, ChatColor.RED,
+                    "This version of Minecraft is not supported by this plugin!",
+                    "Reach out to support may you think that this is an error.");
 
-            // Disable plugin due to unsupported version
-            getServer().getPluginManager().disablePlugin(this);
             return;
         }
 
@@ -45,18 +35,9 @@ public final class TraderNotify extends JavaPlugin {
         Scheduler.seekTrader(this);
 
         // Show display board
-        Utils.log(ChatColor.LIGHT_PURPLE +
-                "\n╔══ TraderNotify " + this.getDescription().getVersion() + " ══════════════" +
-                "\n║ " +
-                "\n║ Are you having trouble with the plugin?" +
-                "\n║ " +
-                "\n║ Open an issue on GitHub, you can do that here." +
-                "\n║ " + ChatColor.AQUA + "https://github.com/ThijmenGThN/TraderNotify/issues/new" + ChatColor.LIGHT_PURPLE +
-                "\n║ " +
-                "\n║ You can also open a ticket on Discord." +
-                "\n║ " + ChatColor.AQUA + "https://discord.gg/7cqHVQyFmU" + ChatColor.LIGHT_PURPLE +
-                "\n║ " +
-                "\n╚══");
+        Utils.consoleBanner(this, ChatColor.LIGHT_PURPLE,
+                "To request a feature or support, reach out using the urls below.",
+                "Looking for contributors, you can fork Trader Notify on GitHub.");
 
         // Update plugin
         Utils.update(this, "https://raw.githubusercontent.com/ThijmenGThN/TraderNotify/master/update.txt");
@@ -80,6 +61,7 @@ public final class TraderNotify extends JavaPlugin {
                 // Config loader
                 Utils.loadConfig(this);
 
+                // Notify command initiator
                 Utils.reply(sender, "The config has been reloaded.");
                 Utils.log("The config has been reloaded.");
                 return true;
