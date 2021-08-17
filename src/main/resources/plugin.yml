@@ -1,6 +1,6 @@
 name: TraderNotify
 version: ${project.version}
-main: com.github.thijmengthn.spigot.TraderNotify
+main: nl.thijmenheuvelink.TraderNotify
 api-version: 1.14
 description: Get notified when a Wandering Trader is in your world!
 website: https://github.com/ThijmenGThN/TraderNotify

@@ -46,24 +46,55 @@ Tip: To reload the config, use /reload-tradernotify.
 # ║ You can also open a ticket on Discord.
 # ║ https://discord.gg/7cqHVQyFmU
 # ║
-# ╠════ Broadcast Message ══════════════
+# ║
+# ║
+# ╠════ MESSAGE ══════════════
 # ║
 # ║ message: "&dA Wandering Trader has appeared!"
 # ║
 # ║ Description: This will be displayed when a wandering trader has appeared.
-# ║ TIP: Color codes can be used, no variables are available.
+# ║ NOTE: Color codes can be used, no variables are available.
 # ║
-# ╠════ World Listener ══════════════
+# ╠════ LISTENER ══════════════
 # ║
 # ║ listener: DEFAULT
 # ║
-# ║ Description: Which worlds should the plugin listener to?
+# ║ Description: Which worlds should the plugin listen to?
 # ║ Option 1: <DEFAULT> ( listener: DEFAULT ) Uses the first world that gets loaded, should be overworld.
 # ║ Option 2: <ALL> ( listener: ALL ) Listen to all available worlds, this also includes dimensions.
+# ║
+# ╠════ USE PERMISSIONS ══════════════
+# ║
+# ║ use-permissions: false
+# ║
+# ║ Description: Require permissions, every permission node can be found at: https://www.spigotmc.org/resources/tradernotify.92776/
+# ║ NOTE: Keeping this on false might be the best option, normal will only be able to recieve notifications and won't be able to change anything.
+# ║ Option 1: <false> ( use-permissions: false ) Keep permissions off, this will use the default permission setting.
+# ║ Option 2: <true> ( use-permissions: true ) Only players with specific permission nodes can do certain things.
+# ║
+# ╠════ ENABLE UPDATES ══════════════
+# ║
+# ║ enable-updates: true
+# ║
+# ║ Description: When this option has been enabled the server will periodically check for updates and if necessary update TraderNotify.
+# ║ NOTE: It is RECOMMEND to keep this enabled, staying up to date will ensure the best experience possible.
+# ║ Option 1: <false> ( enable-updates: false ) This will disable automatic updates, future bug fixes and improvments will have to be installed manually.
+# ║ Option 2: <true> ( enable-updates: true ) TraderNotify will periodically check for updates, if there are any available it will update next time your server starts up.
+# ║
+# ╠════ ENABLE METRICS ══════════════
+# ║
+# ║ enable-metrics: true
+# ║
+# ║ Description: This will provide the plugin a limited amount of data which could help improve your experience. (thid-party remote service called bStats)
+# ║ Option 1: <false> ( enable-metrics: false ) Metrics will not be tracked nor passed onto bStats.
+# ║ Option 2: <true> ( enable-metrics: true ) You will help TraderNotify on gaining insight on limited server data, remotely on bStats.
 # ║
 # ╚══
 message: "&dA Wandering Trader has appeared!"
 listener: DEFAULT
+use-permissions: false
+enable-updates: true
+enable-metrics: true
 </pre>
 </details>
 
