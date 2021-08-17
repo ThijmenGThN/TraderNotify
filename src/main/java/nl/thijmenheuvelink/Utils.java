@@ -76,18 +76,18 @@ public class Utils {
     public static boolean findTrader(JavaPlugin plugin) {
 
         // Get listener type from config
-        String listener = plugin.getConfig().getString("listener");
+        String listener = plugin.getConfig().getString("use-dimensions");
 
         AtomicBoolean found = new AtomicBoolean(false);
 
-        // Find in first world
-        if (listener.equalsIgnoreCase("DEFAULT"))
+        // Find in first loaded world (overworld)
+        if (listener.equalsIgnoreCase("false"))
             for (Entity i : Bukkit.getWorlds().get(0).getEntities())
                 if (i.getName().equals("Wandering Trader"))
                     found.set(true);
 
-        // Find in all worlds
-        if (listener.equalsIgnoreCase("ALL"))
+        // Find in all dimensions
+        if (listener.equalsIgnoreCase("true"))
             Bukkit.getWorlds().forEach(world -> {
                 for (Entity i : world.getEntities())
                     if (i.getName().equals("Wandering Trader"))

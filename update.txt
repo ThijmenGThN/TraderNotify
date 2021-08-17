@@ -1,2 +1,2 @@
-1.6.2
-https://github.com/ThijmenGThN/TraderNotify/releases/download/1.6.2/TraderNotify-1.6.2.jar
+1.6.3
+https://github.com/ThijmenGThN/TraderNotify/releases/download/1.6.3/TraderNotify-1.6.3.jar
