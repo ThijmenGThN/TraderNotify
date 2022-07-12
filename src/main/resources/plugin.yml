@@ -1,19 +1,4 @@
-name: TraderNotify
-version: ${project.version}
-main: nl.thijmenheuvelink.TraderNotify
-api-version: 1.14
-description: Get notified when a Wandering Trader is in your world!
-website: https://github.com/ThijmenGThN/TraderNotify
-
-commands:
-  reload-tradernotify:
-    description: Reload config file.
-    usage: /reload-tradernotify
-    permission: tradernotify.reload
-
-permissions:
-  tradernotify.reload:
-    description: Reload config file.
-    default: op
-  tradernotify.getNotified:
-    description: Receive notifications.
+name: tradernotify
+version: "2.0.0"
+author: tradernotify@thijmenheuvelink.nl
+main: nl.thijmenheuvelink.tradernotify.main
