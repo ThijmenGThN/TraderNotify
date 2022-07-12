@@ -1,6 +1,7 @@
 
 # Development
 .vscode
+venv
 
 # Build
 target
